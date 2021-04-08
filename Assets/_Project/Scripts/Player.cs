@@ -1,22 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.InputSystem;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [Tooltip("The speed of the player")]
-    public float speed;
-    [Tooltip("The speed of the power rotation")]
-    public float powerSpeed;
-    [Tooltip("time to player stay invunerable")]
-    public float invunerableTime;
+    #region iniciaçização
     private Rigidbody2D rb;
 
     private GameObject power;
 
     private Animator anim;
 
-    private Vector2 direction;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,75 +22,63 @@ public class Player : MonoBehaviour
         direction = Vector2.zero;
         power = this.transform.Find("Power").gameObject;
         changePowerColor();
+
+        StartCoroutine(RotateShield());
+        StartCoroutine(MovimentUpdate());
+    }
+    #endregion
+
+    #region movimentação
+    [Tooltip("The speed of the player")]
+    public float speed;
+    private Vector2 direction;
+    public void Moviment(InputAction.CallbackContext ctx)
+    {
+        direction = ctx.ReadValue<Vector2>();
     }
 
-    // Update is called once per frame
-    void Update()
+    // física de movimentação do personagem
+    IEnumerator MovimentUpdate()
     {
-        // comandos de movimentação do personagem
-        //////////////////////////////////////////////////////////////////////////////
-        //key down
-        if (Input.GetKeyDown(KeyCode.D))
+        while (true)
         {
-            anim.SetBool("right", true);
-            direction += Vector2.right;
-        }
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            anim.SetBool("left", true);
-            direction += Vector2.left;
-        }
+            rb.MovePosition(rb.position + direction.normalized * speed * Time.fixedDeltaTime);
+            yield return new WaitForFixedUpdate();
+        } 
+    }
+    #endregion
 
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            anim.SetBool("up", true);
-            direction += Vector2.up;
-        }
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            anim.SetBool("down", true);
-            direction += Vector2.down;
-        }
+    #region mudar poder
 
-
-        //key up
-        if (Input.GetKeyUp(KeyCode.D))
-        {
-            anim.SetBool("right", false);
-            direction -= Vector2.right;
-        }
-        if (Input.GetKeyUp(KeyCode.A))
-        {
-            anim.SetBool("left", false);
-            direction -= Vector2.left;
-        }
-        if (Input.GetKeyUp(KeyCode.W))
-        {
-            anim.SetBool("up", false);
-            direction -= Vector2.up;
-        }
-        if (Input.GetKeyUp(KeyCode.S))
-        {
-            anim.SetBool("down", false);
-            direction -= Vector2.down;
-        }
-        
-        //////////////////////////////////////////////////////////////////////////////
-        // botões para torcar de poder
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            LevelManager.ChangeAntibody(-1);
-            changePowerColor();
-        }
-        if (Input.GetKeyDown(KeyCode.E))
+    public void PowerAdd(InputAction.CallbackContext ctx)
+    {
+        if(ctx.phase == InputActionPhase.Performed)
         {
             LevelManager.ChangeAntibody(1);
             changePowerColor();
         }
-
-        
     }
+    public void PowerMinus(InputAction.CallbackContext ctx)
+    {
+        if (ctx.phase == InputActionPhase.Performed)
+        {
+            LevelManager.ChangeAntibody(-1);
+            changePowerColor();
+        }
+    }
+    #endregion
 
+    #region tiro
+    public void Shoot(InputAction.CallbackContext ctx)
+    {
+        if (ctx.phase == InputActionPhase.Performed)
+        {
+            Debug.Log("atirouuuu");
+        }
+    }
+    #endregion
+
+    #region escudo
     void changePowerColor()
     {
         SpriteRenderer [] colors = power.GetComponentsInChildren<SpriteRenderer>();
@@ -107,17 +90,21 @@ public class Player : MonoBehaviour
             }
         }
     }
+    [Tooltip("The speed of the power rotation")]
+    public float powerSpeed;
 
-    private void FixedUpdate()
+    //mantem o visual do poder girando
+    IEnumerator RotateShield()
     {
-        // física de movimentação do personagem
-        rb.MovePosition(rb.position + direction.normalized * speed * Time.fixedDeltaTime);
-
-        //mantem o visual do poder girando
-        power.transform.Rotate(new Vector3(0, 0, powerSpeed * Time.fixedDeltaTime * -10));
+        while (true)
+        {
+            power.transform.Rotate(new Vector3(0, 0, powerSpeed * Time.fixedDeltaTime * -10));
+            yield return new WaitForFixedUpdate();
+        }
     }
+    #endregion
 
-    // testa a colisão do player
+    #region colisão
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //colisão com virus vivo
@@ -140,7 +127,11 @@ public class Player : MonoBehaviour
             damageTaked();
         }
     }
+    #endregion
 
+    #region dano
+    [Tooltip("time to player stay invunerable")]
+    public float invunerableTime;
     // ativa funções quando o player toma dano
     void damageTaked()
     {
@@ -157,4 +148,5 @@ public class Player : MonoBehaviour
         Physics2D.IgnoreLayerCollision(7, 8, false);
         this.GetComponent<SpriteRenderer>().color = Color.white;
     }
+    #endregion
 }
