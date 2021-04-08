@@ -9,6 +9,7 @@ TagManager:
   - Destroy
   - wall
   - Hemacia
+  - Shoot
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - Player
   - Enemy
   - Power
-  - 
+  - Bullet
   - 
   - 
   - 
