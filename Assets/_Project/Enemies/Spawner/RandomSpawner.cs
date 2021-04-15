@@ -1,7 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using UnityEditor;
 using UnityEngine;
 
 
@@ -18,7 +16,7 @@ public class ObjectsToSpawn
 }
 
 
-public class Spawner : MonoBehaviour
+public class RandomSpawner : MonoBehaviour
 {
     //velocidade do spawn
     [Tooltip("density of spawner")]

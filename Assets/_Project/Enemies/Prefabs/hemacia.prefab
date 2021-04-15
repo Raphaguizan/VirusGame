@@ -13,8 +13,7 @@ GameObject:
   - component: {fileID: 1036508146810951496}
   - component: {fileID: 1036508146810951497}
   - component: {fileID: 5900577267769234631}
-  - component: {fileID: 1036508146810951607}
-  - component: {fileID: 7534346709325003262}
+  - component: {fileID: 8788740093681652382}
   m_Layer: 8
   m_Name: hemacia
   m_TagString: Hemacia
@@ -115,7 +114,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 5
   m_LinearDrag: 0
   m_AngularDrag: 0.01
   m_GravityScale: 0
@@ -143,7 +142,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1036508146810951607
+--- !u!114 &8788740093681652382
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -152,23 +151,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1036508146810951501}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 367d0eae7a935f740b018c5e0c98c0a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 4
-  applyRandomRotate: 1
-  force: 50.5
---- !u!114 &7534346709325003262
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1036508146810951501}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f2ca881bb47c7d458d628c9fb91193a, type: 3}
+  m_Script: {fileID: 11500000, guid: da19c0717a5631e40ac6101e379a46a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   colorType: -1
   life: 5
+  speed: 3
+  force: 100
