@@ -7,20 +7,34 @@ public class Bullet : MonoBehaviour
     public ColorType colorType;
     public float speed;
 
+    private Rigidbody2D rb;
+
     public void Configure(AntiBody ab, float speed)
     {
+        rb = GetComponent<Rigidbody2D>();
         colorType = ab.colorType;
         GetComponent<SpriteRenderer>().color = ab.color;
-        this.speed = speed * -1;
+        this.speed = speed;
+
     }
-    private void Update()
+    private void FixedUpdate()
     {
-        transform.Translate(Vector2.down.normalized * speed * Time.deltaTime);
+        // física para movimentar o objeto sempre no sentido vertical ao qual foi spawnado
+        rb.MovePosition(rb.position + new Vector2(transform.up.x, transform.up.y) * speed * Time.fixedDeltaTime);
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
         // se destroi quando bate no collider "Destroy"
         if (other.gameObject.CompareTag("Destroy"))
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        // se destroi quando bate na parede
+        if (collision.gameObject.CompareTag("wall"))
         {
             Destroy(this.gameObject);
         }

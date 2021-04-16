@@ -11,15 +11,15 @@ public class Wave
 [Serializable]
 public class SpawnActions
 {
-    public SpawnObject obj;
+    public SpawnObject2 obj;
     public int index;
 }
 
 [Serializable]
-public class SpawnObject
+public class SpawnObject2
 {
     [Tooltip("game object to spawn")]
-    public GameObject gameObject;
+    public EnemiesType type;
     [Tooltip("Color of the enemy (if hematia or globule put NONE)")]
     public ColorType color;
     [Tooltip("spawn speed")]

@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        GetComponent<SpriteRenderer>().color = LevelManager.GetColorOfType(colorType);
         direction = Vector2.left;
     }
 
@@ -25,7 +26,7 @@ public class Enemy : MonoBehaviour
     #endregion
 
     #region moviment
-    public float speed;// velocidade de movimento
+    public float speed = 3f;// velocidade de movimento
     protected Rigidbody2D rb;
 
     protected void FixedUpdate()

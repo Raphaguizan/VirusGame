@@ -6,6 +6,8 @@ public class SpawnerController : MonoBehaviour
 {
     private int spawnCount = 0;
     [SerializeField]
+    private ListOfEnemies EnemiesPrefab;
+    [SerializeField]
     List<Wave> waves;
 
     public void Spawn()
@@ -20,8 +22,8 @@ public class SpawnerController : MonoBehaviour
         foreach (SpawnActions singelEvent in currentWave.spawns)
         {
             if (singelEvent.index > transform.childCount) return;
-            SpawnObject objAux = singelEvent.obj;
-            GameObject aux = Instantiate(objAux.gameObject, transform.GetChild(singelEvent.index).position, this.transform.rotation);
+            SpawnObject2 objAux = singelEvent.obj;
+            GameObject aux = Instantiate(EnemiesPrefab.Enemies[(int)objAux.type], transform.GetChild(singelEvent.index).position, this.transform.rotation);
             aux.GetComponent<Enemy>().Initialize(objAux.color, objAux.speed);
         }
         spawnCount++;
