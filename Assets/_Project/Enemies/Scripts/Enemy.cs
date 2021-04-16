@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
 
     protected Vector2 direction;
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         GetComponent<SpriteRenderer>().color = LevelManager.GetColorOfType(colorType);
@@ -29,7 +29,7 @@ public class Enemy : MonoBehaviour
     public float speed = 3f;// velocidade de movimento
     protected Rigidbody2D rb;
 
-    protected void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         // física para movimentar o objeto
         rb.MovePosition(rb.position + direction.normalized * speed * Time.fixedDeltaTime);
@@ -47,6 +47,7 @@ public class Enemy : MonoBehaviour
             {
                 life--;
                 if (life <= 0) Destroy(gameObject);
+                StartCoroutine(DamageAnimation(0.05f));
             }
         }
     }
@@ -58,6 +59,15 @@ public class Enemy : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+    }
+    #endregion
+
+    #region damage
+    IEnumerator DamageAnimation(float time)
+    {
+        GetComponent<SpriteRenderer>().color = Color.black;
+        yield return new WaitForSeconds(time);
+        GetComponent<SpriteRenderer>().color = LevelManager.GetColorOfType(colorType);
     }
     #endregion
 }

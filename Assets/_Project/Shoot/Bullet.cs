@@ -25,7 +25,7 @@ public class Bullet : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         // se destroi quando bate no collider "Destroy"
-        if (other.gameObject.CompareTag("Destroy"))
+        if (other.gameObject.CompareTag("DestroyShot"))
         {
             Destroy(this.gameObject);
         }

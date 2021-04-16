@@ -53,7 +53,6 @@ public class ShotControler : MonoBehaviour
         {
             if (IsShotting)
             {
-                Debug.Log(PowerUpController.PowerUpActive);
                 for (int i = 0; i < shotCount; i++)
                 {
                     Fire(transform.GetChild(i),shotSpeed);
