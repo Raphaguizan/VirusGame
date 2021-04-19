@@ -72,6 +72,11 @@
       "source": "builtin",
       "dependencies": {}
     },
+    "com.unity.cinemachine": {
+      "version": "2.6.4",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
     "com.unity.ads": {
       "version": "3.6.1",
       "depth": 0,
