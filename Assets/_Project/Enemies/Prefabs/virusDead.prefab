@@ -12,8 +12,7 @@ GameObject:
   - component: {fileID: 6397625166192001364}
   - component: {fileID: 6397625166192001365}
   - component: {fileID: 6397625166192001450}
-  - component: {fileID: 6397625166192001451}
-  - component: {fileID: 6397625166192001366}
+  - component: {fileID: -8803108125880769848}
   m_Layer: 8
   m_Name: virusDead
   m_TagString: Dead_Enemy
@@ -74,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: b2022934b9346244ab29e63a8e664629, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -105,7 +104,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!58 &6397625166192001450
 CircleCollider2D:
@@ -123,7 +122,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.975
---- !u!114 &6397625166192001451
+--- !u!114 &-8803108125880769848
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -132,23 +131,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6397625166192001448}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 367d0eae7a935f740b018c5e0c98c0a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 3
-  applyRandomRotate: 0
-  force: 0
---- !u!114 &6397625166192001366
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6397625166192001448}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f2ca881bb47c7d458d628c9fb91193a, type: 3}
+  m_Script: {fileID: 11500000, guid: 95e45a58a13371146a2f4a7fa19dc444, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   colorType: -1
   life: 1
+  speed: 3
+  waveHeigth: 0

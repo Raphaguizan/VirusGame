@@ -72,9 +72,9 @@ public class Player : MonoBehaviour
     public void Shoot(InputAction.CallbackContext ctx)
     {
         if (ctx.phase == InputActionPhase.Started)
-            ShootControler.Instance.MachineGunCtrl(true);
+            ShotControler.Instance.WeaponCtrl(true);
         else if (ctx.phase == InputActionPhase.Canceled)
-            ShootControler.Instance.MachineGunCtrl(false);
+            ShotControler.Instance.WeaponCtrl(false);
     }
     #endregion
 
@@ -125,6 +125,14 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Hemacia"))
         {
             damageTaked();
+        }
+
+        //colisão com powerUp
+        if (collision.gameObject.CompareTag("powerUp"))
+        {
+            PowerUpInstance aux = collision.gameObject.GetComponent<PowerUpInstance>();
+            PowerUpController.Instace.ActivatePowerUp(aux.type, aux.duration);
+            Destroy(collision.gameObject);
         }
     }
     #endregion
