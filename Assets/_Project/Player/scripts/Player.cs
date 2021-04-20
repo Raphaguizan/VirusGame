@@ -79,11 +79,11 @@ public class Player : MonoBehaviour
     #region escudo
     private void OnEnable()
     {
-        PowerUpController.PowerUpChange += ShieldCtrl;
+        PowerUpController.ShieldChange += resp => ShieldCtrl(resp);
     }
     private void OnDisable()
     {
-        PowerUpController.PowerUpChange -= ShieldCtrl;
+        PowerUpController.ShieldChange -= resp => ShieldCtrl(resp);
     }
 
     [SerializeField]
@@ -91,13 +91,14 @@ public class Player : MonoBehaviour
     [Tooltip("The speed of the power rotation")]
     public float powerSpeed = 1f;
 
-    private void ShieldCtrl()
+    private void ShieldCtrl(bool input)
     {
-        if (PowerUpController.PowerUpActive != PowerUpType.SHIELD)
-            shield.SetActive(false);
-        else
+        if (input)
+        {
             shield.SetActive(true);
             shield.GetComponent<Animator>().speed = powerSpeed;
+        }
+        else shield.SetActive(false);
     }
 
     void ChangePowerColor()
