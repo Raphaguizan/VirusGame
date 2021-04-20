@@ -13,8 +13,13 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        DontDestroyOnLoad(this.gameObject);
-        Instance = this;
+        if(Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        } 
+        else Destroy(this.gameObject);
+        
         level = LoadLevel();
     }
 

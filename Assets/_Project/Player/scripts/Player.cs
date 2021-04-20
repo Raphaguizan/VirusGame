@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering.Universal;
 
 public class Player : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class Player : MonoBehaviour
 
         Physics2D.IgnoreLayerCollision(7, 8, false);
         direction = Vector2.zero;
+
+        Debug.Log("start : "+ shield);
 
         shield.SetActive(false);
         ChangePowerColor();
@@ -79,36 +82,46 @@ public class Player : MonoBehaviour
     #region escudo
     private void OnEnable()
     {
-        PowerUpController.ShieldChange += resp => ShieldCtrl(resp);
+        PowerUpController.ShieldChange += ShieldCtrl;
     }
     private void OnDisable()
     {
-        PowerUpController.ShieldChange -= resp => ShieldCtrl(resp);
+        PowerUpController.ShieldChange -= ShieldCtrl;
     }
 
     [SerializeField]
     private GameObject shield;
+    private bool shieldActive = false;
     [Tooltip("The speed of the power rotation")]
     public float powerSpeed = 1f;
 
-    private void ShieldCtrl(bool input)
+    private void ShieldCtrl()
     {
-        if (input)
+        if (PowerUpController.isShieldActive)
         {
-            shield.SetActive(true);
-            shield.GetComponent<Animator>().speed = powerSpeed;
+            this.shield.SetActive(true);
+            shieldActive = true;
+            ChangePowerColor();
+            this.shield.GetComponent<Animator>().speed = powerSpeed;
         }
-        else shield.SetActive(false);
+        else
+        {
+            shield.SetActive(false);
+            shieldActive = false;
+        }
+        
     }
 
     void ChangePowerColor()
     {
-        SpriteRenderer [] colors = shield.GetComponentsInChildren<SpriteRenderer>();
-        foreach(SpriteRenderer s in colors)
+        foreach(Transform s in shield.transform)
         {
-            if(s.enabled == true)
+            SpriteRenderer color = s.GetComponent<SpriteRenderer>();
+            Light2D light = s.GetComponent<Light2D>();
+            if (s.gameObject.activeInHierarchy)
             {
-                s.color = LevelManager.GetAntibodySelected().color;
+                color.color = LevelManager.GetAntibodySelected().color;
+                light.color = LevelManager.GetAntibodySelected().color;
             }
         }
     }
@@ -124,8 +137,7 @@ public class Player : MonoBehaviour
         {
             // verifica se o shield está ativo e na cor certa para evitar o dano
             Enemy aux = collision.gameObject.GetComponent<Enemy>();
-            if (PowerUpController.PowerUpActive != PowerUpType.SHIELD 
-                || aux.colorType != LevelManager.GetAntibodySelected().colorType)
+            if (!shieldActive || aux.colorType != LevelManager.GetAntibodySelected().colorType)
             {
                 DamageTaked();
             }
@@ -142,7 +154,7 @@ public class Player : MonoBehaviour
         //colisão com hemácia
         if (collision.gameObject.CompareTag("Hemacia"))
         {
-            if (PowerUpController.PowerUpActive != PowerUpType.SHIELD)
+            if (!shieldActive)
                 DamageTaked();
         }
 
@@ -151,7 +163,7 @@ public class Player : MonoBehaviour
         {
             PowerUpInstance aux = collision.gameObject.GetComponent<PowerUpInstance>();
             PowerUpController.Instace.ActivatePowerUp(aux.type, aux.duration);
-            Destroy(collision.gameObject);
+            collision.gameObject.SetActive(false);
         }
     }
     #endregion

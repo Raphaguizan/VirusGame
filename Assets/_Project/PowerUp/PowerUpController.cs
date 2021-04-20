@@ -5,8 +5,8 @@ using UnityEngine;
 public class PowerUpController : MonoBehaviour
 {
     public static PowerUpType PowerUpActive;
-    public static Action<bool> ShieldChange;// ação que avisa a mudança de powerUp shield
-    public static Action PowerUpChange;// ação que avisa a mudança de powerUp
+    public static bool isShieldActive;
+    public static Action PowerUpChange, ShieldChange;// ação que avisa a mudança de powerUp
     public static PowerUpController Instace;
 
     private void Awake()
@@ -15,6 +15,7 @@ public class PowerUpController : MonoBehaviour
     }
     private void Start()
     {
+        isShieldActive = false;
         PowerUpActive = PowerUpType.NONE;
         PowerUpChange?.Invoke();// invoca a mudança logo no início para selecionar a arma default
     }
@@ -24,7 +25,8 @@ public class PowerUpController : MonoBehaviour
     {
         if(pUT == PowerUpType.SHIELD)
         {
-            ShieldChange?.Invoke(true);
+            isShieldActive = true;
+            ShieldChange?.Invoke();
             StartCoroutine(PowerUpShieldTime(duration));
         }
         else
@@ -38,7 +40,8 @@ public class PowerUpController : MonoBehaviour
     IEnumerator PowerUpShieldTime(float duration)
     {
         yield return new WaitForSeconds(duration);
-        ShieldChange?.Invoke(false);
+        isShieldActive = false;
+        ShieldChange?.Invoke();
     }
     // faz a contagem de tempo para terminar o powerUp
     IEnumerator PowerUpTime(float duration)
@@ -51,5 +54,6 @@ public class PowerUpController : MonoBehaviour
     private void OnDisable()
     {
         StopCoroutine(PowerUpTime(0));
+        StopCoroutine(PowerUpShieldTime(0));
     }
 }

@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 9183240519664910608}
   - component: {fileID: 5026675433044980623}
   - component: {fileID: 4626231047361739714}
+  - component: {fileID: 9207194853343763864}
+  - component: {fileID: 7048532864178265477}
   m_Layer: 8
   m_Name: Globule
   m_TagString: Hemacia
@@ -54,7 +56,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 08911da3d6314854d89f9a4529281d22, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -157,3 +159,84 @@ MonoBehaviour:
   colorType: -1
   life: 5
   speed: 3
+--- !u!114 &9207194853343763864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4626231047361739715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: -2.6384997, y: -3.15141, z: 0}
+  - {x: -1.2487718, y: -3.8903568, z: 0}
+  - {x: -0.25885466, y: -4.0778627, z: 0}
+  - {x: 0.8152404, y: -4.0945005, z: 0}
+  - {x: 2.5533006, y: -3.2061324, z: 0}
+  - {x: 3.4225204, y: -2.1356773, z: 0}
+  - {x: 3.8188643, y: -1.4593277, z: 0}
+  - {x: 4.0634537, y: -0.68212086, z: 0}
+  - {x: 4.1581535, y: 0.8651471, z: 0}
+  - {x: 3.7203763, y: 1.9766145, z: 0}
+  - {x: 2.9658446, y: 3.0966876, z: 0}
+  - {x: 1.3205078, y: 4.0186615, z: 0}
+  - {x: -0.7824939, y: 4.1038604, z: 0}
+  - {x: -2.116117, y: 3.657571, z: 0}
+  - {x: -3.1080456, y: 2.679888, z: 0}
+  - {x: -3.8370519, y: 1.4756025, z: 0}
+  - {x: -4.070685, y: -0.18110956, z: 0}
+  - {x: -3.6876295, y: -1.6788995, z: 0}
+  m_ShapePathHash: 844274151
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 56308
+--- !u!114 &7048532864178265477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4626231047361739715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_LightType: 3
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 0.667
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 0.72
+  m_LightVolumeOpacity: 0.012
+  m_ApplyToSortingLayers: 00000000
+  m_LightCookieSprite: {fileID: 0}
+  m_UseNormalMap: 0
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
+  m_ShadowIntensity: 0
+  m_ShadowVolumeIntensity: 0
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0
+  m_PointLightOuterRadius: 4.2212386
+  m_PointLightDistance: 3
+  m_PointLightQuality: 1
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: 0.5, z: 0}
+  - {x: -0.5, y: 0.5, z: 0}

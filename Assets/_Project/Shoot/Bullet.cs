@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering.Universal;
 
 public class Bullet : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class Bullet : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         colorType = ab.colorType;
         GetComponent<SpriteRenderer>().color = ab.color;
+        GetComponentInChildren<Light2D>().color = ab.color;
         this.speed = speed;
 
     }
