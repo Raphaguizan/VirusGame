@@ -8,8 +8,6 @@ public class Player : MonoBehaviour
     #region iniciaçização
     private Rigidbody2D rb;
 
-    private GameObject power;
-
     private Animator anim;
 
     // Start is called before the first frame update
@@ -20,10 +18,10 @@ public class Player : MonoBehaviour
 
         Physics2D.IgnoreLayerCollision(7, 8, false);
         direction = Vector2.zero;
-        power = this.transform.Find("Power").gameObject;
+
+        shield.SetActive(false);
         ChangePowerColor();
 
-        StartCoroutine(RotateShield());
         StartCoroutine(MovimentUpdate());
     }
     #endregion
@@ -79,9 +77,32 @@ public class Player : MonoBehaviour
     #endregion
 
     #region escudo
+    private void OnEnable()
+    {
+        PowerUpController.PowerUpChange += ShieldCtrl;
+    }
+    private void OnDisable()
+    {
+        PowerUpController.PowerUpChange -= ShieldCtrl;
+    }
+
+    [SerializeField]
+    private GameObject shield;
+    [Tooltip("The speed of the power rotation")]
+    public float powerSpeed = 1f;
+
+    private void ShieldCtrl()
+    {
+        if (PowerUpController.PowerUpActive != PowerUpType.SHIELD)
+            shield.SetActive(false);
+        else
+            shield.SetActive(true);
+            shield.GetComponent<Animator>().speed = powerSpeed;
+    }
+
     void ChangePowerColor()
     {
-        SpriteRenderer [] colors = power.GetComponentsInChildren<SpriteRenderer>();
+        SpriteRenderer [] colors = shield.GetComponentsInChildren<SpriteRenderer>();
         foreach(SpriteRenderer s in colors)
         {
             if(s.enabled == true)
@@ -90,18 +111,8 @@ public class Player : MonoBehaviour
             }
         }
     }
-    [Tooltip("The speed of the power rotation")]
-    public float powerSpeed;
-
-    //mantem o visual do poder girando
-    IEnumerator RotateShield()
-    {
-        while (true)
-        {
-            power.transform.Rotate(new Vector3(0, 0, powerSpeed * Time.fixedDeltaTime * -10));
-            yield return new WaitForFixedUpdate();
-        }
-    }
+    
+    
     #endregion
 
     #region colisão
@@ -110,7 +121,13 @@ public class Player : MonoBehaviour
         //colisão com virus vivo
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            damageTaked();
+            // verifica se o shield está ativo e na cor certa para evitar o dano
+            Enemy aux = collision.gameObject.GetComponent<Enemy>();
+            if (PowerUpController.PowerUpActive != PowerUpType.SHIELD 
+                || aux.colorType != LevelManager.GetAntibodySelected().colorType)
+            {
+                DamageTaked();
+            }
             Destroy(collision.gameObject);
         }
 
@@ -124,7 +141,8 @@ public class Player : MonoBehaviour
         //colisão com hemácia
         if (collision.gameObject.CompareTag("Hemacia"))
         {
-            damageTaked();
+            if (PowerUpController.PowerUpActive != PowerUpType.SHIELD)
+                DamageTaked();
         }
 
         //colisão com powerUp
@@ -141,8 +159,9 @@ public class Player : MonoBehaviour
     [Tooltip("time to player stay invunerable")]
     public float invunerableTime;
     // ativa funções quando o player toma dano
-    void damageTaked()
+    void DamageTaked()
     {
+        
         Physics2D.IgnoreLayerCollision(7, 8);// desliga a colisão com inimigos
         this.GetComponent<SpriteRenderer>().color = Color.black; // muda a cor(ou ativa animação)
         StartCoroutine(InvunerableTime(invunerableTime));// chama a corrotina que ativa tudo novamente

@@ -26,6 +26,7 @@ public class ShotControler : MonoBehaviour
     // recebe a ação de mudança de arma e ajusta as variáveis
     private void PowerUpCtrl()
     {
+        if (PowerUpController.PowerUpActive == PowerUpType.SHIELD) return;
         Guns auxGun = GetGunByType(PowerUpController.PowerUpActive);
         timeBtShot = auxGun.BulletCooldown;
         shotSpeed = auxGun.BulletSpeed;
