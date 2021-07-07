@@ -74,8 +74,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -413703267
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 79baaf4963fd1384ca822921f1393475, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -176,7 +176,7 @@ MonoBehaviour:
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
   m_SelfShadows: 0
-  m_ApplyToSortingLayers: 00000000
+  m_ApplyToSortingLayers: 9d6357e723d8ebcb
   m_ShapePath:
   - {x: -2.6384997, y: -3.15141, z: 0}
   - {x: -1.2487718, y: -3.8903568, z: 0}
@@ -198,7 +198,7 @@ MonoBehaviour:
   - {x: -3.6876295, y: -1.6788995, z: 0}
   m_ShapePathHash: 844274151
   m_Mesh: {fileID: 0}
-  m_InstanceId: 56308
+  m_InstanceId: 68636
 --- !u!114 &7048532864178265477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,9 +215,9 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.667
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.72
+  m_Intensity: 0.4
   m_LightVolumeOpacity: 0.012
-  m_ApplyToSortingLayers: 00000000
+  m_ApplyToSortingLayers: 23d8ebcb9d6357e7
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 0
   m_LightOrder: 0

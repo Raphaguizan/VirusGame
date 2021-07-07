@@ -15,7 +15,10 @@ public class Bullet : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         colorType = ab.colorType;
         GetComponent<SpriteRenderer>().color = ab.color;
-        GetComponentInChildren<Light2D>().color = ab.color;
+        foreach(Transform child in transform)
+        {
+            child.GetComponent<Light2D>().color = ab.color;
+        }
         this.speed = speed;
 
     }

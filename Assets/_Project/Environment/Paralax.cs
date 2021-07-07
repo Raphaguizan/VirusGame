@@ -20,6 +20,7 @@ public class Paralax : MonoBehaviour
     {
         // pega tamanho da imagem
         lenght = GetComponentInChildren<SpriteRenderer>().bounds.size.x;
+        second.transform.position = new Vector3(first.transform.position.x + lenght, first.transform.position.y, first.transform.position.z);
     }
     private void FixedUpdate()
     {

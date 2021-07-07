@@ -26,6 +26,8 @@ public class Player : MonoBehaviour
         ChangePowerColor();
 
         StartCoroutine(MovimentUpdate());
+
+        backGroundLigth.color = Color.white;
     }
     #endregion
 
@@ -80,6 +82,7 @@ public class Player : MonoBehaviour
     #endregion
 
     #region escudo
+    public Light2D backGroundLigth;
     private void OnEnable()
     {
         PowerUpController.ShieldChange += ShieldCtrl;
@@ -108,13 +111,15 @@ public class Player : MonoBehaviour
         {
             shield.SetActive(false);
             shieldActive = false;
+            backGroundLigth.color = Color.white;
         }
         
     }
 
     void ChangePowerColor()
     {
-        foreach(Transform s in shield.transform)
+        if(shieldActive) backGroundLigth.color = LevelManager.GetAntibodySelected().color;
+        foreach (Transform s in shield.transform)
         {
             SpriteRenderer color = s.GetComponent<SpriteRenderer>();
             Light2D light = s.GetComponent<Light2D>();
