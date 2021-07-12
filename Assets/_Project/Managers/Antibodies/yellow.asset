@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: yellow
   m_EditorClassIdentifier: 
   abName: yellow
-  color: {r: 1, g: 0.9800461, b: 0, a: 0}
+  color: {r: 1, g: 0.9800461, b: 0, a: 1}
   colorType: 3

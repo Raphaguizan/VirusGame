@@ -6,6 +6,8 @@ using UnityEngine.InputSystem;
 public class ShotControler : MonoBehaviour
 {
     public static ShotControler Instance;
+    private Animator playerAnim;
+    private Guns gunType = null;
     private void OnEnable()
     {
         PowerUpController.PowerUpChange += PowerUpCtrl;
@@ -19,8 +21,17 @@ public class ShotControler : MonoBehaviour
     private Guns[] allGuns;
     private void Awake()
     {
-        Instance = this;
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(this);
+
         StartCoroutine(MachineGun());// inicia a corrotina de tiro
+    }
+
+    public static void Initialize(Animator anim)
+    {
+        Instance.playerAnim = anim;
     }
 
     // recebe a ação de mudança de arma e ajusta as variáveis
@@ -31,6 +42,8 @@ public class ShotControler : MonoBehaviour
         timeBtShot = auxGun.BulletCooldown;
         shotSpeed = auxGun.BulletSpeed;
         shotCount = auxGun.NumberOfShots;
+
+        gunType = auxGun;
     }
 
     public GameObject bullet;
@@ -54,11 +67,26 @@ public class ShotControler : MonoBehaviour
         {
             if (IsShotting)
             {
+                //ajusta a animação do tiro
+                if (gunType.Type == PowerUpType.MACHINEGUN) playerAnim.SetBool("machineGun", true);
+                else
+                {
+                    playerAnim.SetBool("machineGun", false);
+                    playerAnim.SetTrigger("shoot");
+                }
+
                 for (int i = 0; i < shotCount; i++)
                 {
                     Fire(transform.GetChild(i),shotSpeed);
                 }
                 yield return new WaitForSeconds(timeBtShot);
+            }
+            else
+            {
+                if (playerAnim)
+                {
+                    playerAnim.SetBool("machineGun", false);
+                }
             }
             yield return null;
         }

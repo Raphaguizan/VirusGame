@@ -15,19 +15,20 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
+        anim = GetComponentInChildren<Animator>();
 
         Physics2D.IgnoreLayerCollision(7, 8, false);
         direction = Vector2.zero;
 
-        Debug.Log("start : "+ shield);
-
         shield.SetActive(false);
         ChangePowerColor();
 
-        StartCoroutine(MovimentUpdate());
+        StartCoroutine(MovimentUpdate()); 
+        StartCoroutine(EyeTrackingCtrl());
 
         backGroundLigth.color = Color.white;
+
+        ShotControler.Initialize(anim);// inicializa o controle de arma passando o animator
     }
     #endregion
 
@@ -72,12 +73,32 @@ public class Player : MonoBehaviour
     #endregion
 
     #region tiro
+    private bool isShooting = false;
     public void Shoot(InputAction.CallbackContext ctx)
     {
         if (ctx.phase == InputActionPhase.Started)
+        {
+            isShooting = true;
+            anim.SetLayerWeight(1, 1);
             ShotControler.Instance.WeaponCtrl(true);
+        }
         else if (ctx.phase == InputActionPhase.Canceled)
+        {
+            isShooting = false;
+            StartCoroutine(ShootAnimationBackToPosition());
             ShotControler.Instance.WeaponCtrl(false);
+        } 
+    }
+
+    IEnumerator ShootAnimationBackToPosition()
+    {
+        float shootCtrl = 1;
+        while (shootCtrl > 0 && !isShooting)
+        {
+            shootCtrl -= Time.deltaTime;
+            anim.SetLayerWeight(1, shootCtrl);
+            yield return null;
+        }
     }
     #endregion
 
@@ -181,7 +202,7 @@ public class Player : MonoBehaviour
     {
         
         Physics2D.IgnoreLayerCollision(7, 8);// desliga a colisão com inimigos
-        this.GetComponent<SpriteRenderer>().color = Color.black; // muda a cor(ou ativa animação)
+        this.GetComponentInChildren<SpriteRenderer>().color = Color.black; // muda a cor(ou ativa animação)
         StartCoroutine(InvunerableTime(invunerableTime));// chama a corrotina que ativa tudo novamente
         LevelManager.RemoveAntiBody();// chama a função de remover anticorpo
     }
@@ -191,7 +212,60 @@ public class Player : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         Physics2D.IgnoreLayerCollision(7, 8, false);
-        this.GetComponent<SpriteRenderer>().color = Color.white;
+        this.GetComponentInChildren<SpriteRenderer>().color = Color.white;
+    }
+    #endregion
+    #region eyeTracking
+    public Transform defaultEyeTarget;
+
+    //private Collider[] hitColliders = new Collider[10];
+    //private int collidersNum = 0;
+    //public void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if(collidersNum <= 10)
+    //    {
+    //        hitColliders[collidersNum] = collision
+    //    }
+    //}
+
+    //public void OnTriggerExit2D(Collider2D collision)
+    //{
+        
+    //}
+    IEnumerator EyeTrackingCtrl()
+    {
+        Collider2D[] hitColliders = new Collider2D[10];
+        while (true)
+        {
+            int numColliders = Physics2D.OverlapCircleNonAlloc(this.transform.position, 6f, hitColliders, LayerMask.GetMask("Enemy", "Power"));
+            Debug.Log(numColliders);
+            if (numColliders == 0 || isShooting) EyeMove.SetTarget(defaultEyeTarget);
+            else
+            {
+                EyeMove.SetTarget(LookForCloser(hitColliders, numColliders));
+            }
+            yield return new WaitForFixedUpdate();
+        } 
+    }
+
+    private Transform LookForCloser(Collider2D[] hits, int num)
+    {
+        float minDistance = 100f;
+        Transform resp = null;
+        if (num > 10) num = 10;
+        for (int i = 0; i < num; i++)
+        {
+            Debug.Log(hits[i].name);
+            float dist = Vector2.Distance(hits[i].transform.position, transform.position);
+            if (dist < minDistance)
+            {
+                resp = hits[i].transform;
+                minDistance = dist;
+            }
+        }
+        Debug.Log("REEEESSSSP = " + resp.name);
+        Debug.Log("ACABOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOU");
+        return resp;
     }
     #endregion
 }
