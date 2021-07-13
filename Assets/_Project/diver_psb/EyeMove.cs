@@ -6,28 +6,29 @@ using UnityEngine;
 public class EyeMove : MonoBehaviour
 {
     public Transform eyeBall, eyeRotate, target;
-    private static EyeMove Instance;
+    public bool IsPlayerTarget;
 
     private void Start()
     {
-        if(Instance == null)
+        if (IsPlayerTarget)
         {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(this);
+            target = GameObject.FindGameObjectWithTag("Player").transform;
         }
     }
-    // Update is called once per frame
+
+    // mantem o olho virado para o alvo
     void Update()
     {
         eyeRotate.right = new Vector2(target.position.x, target.position.y) - new Vector2(eyeRotate.position.x, eyeRotate.position.y);
-        eyeBall.rotation = Quaternion.identity;
+        eyeBall.right = transform.right;
     }
 
-    public static void SetTarget(Transform newTarget)
+    /// <summary>
+    /// muda o alvo que o olho deve seguir
+    /// </summary>
+    /// <param name="newTarget"></param>
+    public void SetTarget(Transform newTarget)
     {
-        Instance.target = newTarget;
+        target = newTarget;
     }
 }

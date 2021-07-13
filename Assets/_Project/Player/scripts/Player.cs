@@ -89,7 +89,7 @@ public class Player : MonoBehaviour
             ShotControler.Instance.WeaponCtrl(false);
         } 
     }
-
+    // muda gradualmente a animação de tiro para a idle
     IEnumerator ShootAnimationBackToPosition()
     {
         float shootCtrl = 1;
@@ -216,33 +216,21 @@ public class Player : MonoBehaviour
     }
     #endregion
     #region eyeTracking
+    public EyeMove EyeMoveScript;
     public Transform defaultEyeTarget;
 
-    //private Collider[] hitColliders = new Collider[10];
-    //private int collidersNum = 0;
-    //public void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if(collidersNum <= 10)
-    //    {
-    //        hitColliders[collidersNum] = collision
-    //    }
-    //}
-
-    //public void OnTriggerExit2D(Collider2D collision)
-    //{
-        
-    //}
     IEnumerator EyeTrackingCtrl()
     {
         Collider2D[] hitColliders = new Collider2D[10];
         while (true)
         {
-            int numColliders = Physics2D.OverlapCircleNonAlloc(this.transform.position, 6f, hitColliders, LayerMask.GetMask("Enemy", "Power"));
-            Debug.Log(numColliders);
-            if (numColliders == 0 || isShooting) EyeMove.SetTarget(defaultEyeTarget);
+            // pega todos os objetos das layers Enemy e Power em um determinado range (5f)
+            int numColliders = Physics2D.OverlapCircleNonAlloc(this.transform.position, 5f, hitColliders, LayerMask.GetMask("Enemy", "Power"));
+
+            if (numColliders == 0 || isShooting) EyeMoveScript.SetTarget(defaultEyeTarget);
             else
             {
-                EyeMove.SetTarget(LookForCloser(hitColliders, numColliders));
+                EyeMoveScript.SetTarget(LookForCloser(hitColliders, numColliders));
             }
             yield return new WaitForFixedUpdate();
         } 
@@ -255,16 +243,14 @@ public class Player : MonoBehaviour
         if (num > 10) num = 10;
         for (int i = 0; i < num; i++)
         {
-            Debug.Log(hits[i].name);
             float dist = Vector2.Distance(hits[i].transform.position, transform.position);
             if (dist < minDistance)
             {
+                Debug.Log(hits[i]);
                 resp = hits[i].transform;
                 minDistance = dist;
             }
         }
-        Debug.Log("REEEESSSSP = " + resp.name);
-        Debug.Log("ACABOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOU");
         return resp;
     }
     #endregion

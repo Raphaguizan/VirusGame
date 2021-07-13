@@ -9,12 +9,14 @@ public class Enemy : MonoBehaviour
     public int life = 1;
 
     protected Vector2 direction;
+    protected Animator anim;
     // Start is called before the first frame update
     protected virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         GetComponent<SpriteRenderer>().color = LevelManager.GetColorOfType(colorType);
         direction = Vector2.left;
+        anim = GetComponentInChildren<Animator>();
     }
 
     public void Initialize(ColorType t, float speed = 3f)
@@ -48,6 +50,7 @@ public class Enemy : MonoBehaviour
                 life--;
                 if (life <= 0) Destroy(gameObject);
                 StartCoroutine(DamageAnimation(0.05f));
+                DamageBehaviour();
             }
         }
     }
@@ -63,11 +66,15 @@ public class Enemy : MonoBehaviour
     #endregion
 
     #region damage
+    protected virtual void DamageBehaviour()
+    {
+        //Do Something
+    }
     IEnumerator DamageAnimation(float time)
     {
-        GetComponent<SpriteRenderer>().color = Color.black;
+        anim.SetLayerWeight(1, 1);
         yield return new WaitForSeconds(time);
-        GetComponent<SpriteRenderer>().color = LevelManager.GetColorOfType(colorType);
+        anim.SetLayerWeight(1, 0);
     }
     #endregion
 }

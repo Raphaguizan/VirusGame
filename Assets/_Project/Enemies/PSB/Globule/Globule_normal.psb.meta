@@ -1,0 +1,644 @@
+fileFormatVersion: 2
+guid: 75cb87ffe20ae18418359475317d1079
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    isReadable: 0
+    streamingMipmaps: 1
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  spriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  mosaicSpriteImportData: []
+  rigSpriteImportData:
+  - name: eye
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 875
+      y: 7884
+      width: 865
+      height: 879
+    spriteID: 5d903cbcf3ce4384dac49a5fcdcb5686
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 516, y: 7399}
+  - name: Armature_Idle_15
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 875
+      y: 4
+      width: 865
+      height: 872
+    spriteID: c42d9a5f857d9dc4280c80d345474fac
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 868, y: -8}
+  - name: Armature_Idle_14
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 875
+      y: 1778
+      width: 865
+      height: 866
+    spriteID: d61140c37f54d884cb9ae576e427a332
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 869, y: 1762}
+  - name: Armature_Idle_13
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 875
+      y: 3538
+      width: 863
+      height: 859
+    spriteID: 8339de3b5dd171c42ad8e7d9f0f10439
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 868, y: 3519}
+  - name: Armature_Idle_12
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 875
+      y: 6156
+      width: 865
+      height: 853
+    spriteID: f195ef078918e00438865e44d071a9a7
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 867, y: 6134}
+  - name: Armature_Idle_11
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 875
+      y: 7023
+      width: 865
+      height: 847
+    spriteID: 3ed1b4654d13da8419abff299d6f8858
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 868, y: 6998}
+  - name: Armature_Idle_10
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1748
+      y: 4
+      width: 865
+      height: 840
+    spriteID: d91cd4a16ecd2844da0c6eb747a1c90d
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1741, y: -24}
+  - name: Armature_Idle_09
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1748
+      y: 2563
+      width: 864
+      height: 834
+    spriteID: 42cfe8918efb2ca4e9aa3c301353b864
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1742, y: 2531}
+  - name: Armature_Idle_08
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1748
+      y: 3411
+      width: 864
+      height: 841
+    spriteID: bf3b6d1ae13773844a0aab1a6c66743c
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1742, y: 3377}
+  - name: Armature_Idle_07
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1748
+      y: 1714
+      width: 864
+      height: 847
+    spriteID: 2d326ba68814d804799634e8ddfe641f
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1742, y: 1684}
+  - name: Armature_Idle_06
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1748
+      y: 859
+      width: 862
+      height: 855
+    spriteID: 01b4a18d8ce656e439597d984d9212ae
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1741, y: 833}
+  - name: Armature_Idle_05
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1786
+      width: 862
+      height: 861
+    spriteID: f175cca88913d3a4e9f62c10d74c69e5
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -4, y: 1764}
+  - name: Armature_Idle_04
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 875
+      y: 5287
+      width: 862
+      height: 867
+    spriteID: 588a4a1218172fe4386ebb036d9397ac
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 867, y: 5268}
+  - name: Armature_Idle_03
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 875
+      y: 4412
+      width: 864
+      height: 872
+    spriteID: af9f5ce7321047b499e7f2b69363173d
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 867, y: 4396}
+  - name: Armature_Idle_02
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 875
+      y: 2658
+      width: 864
+      height: 879
+    spriteID: 0f797cad7a9324244b6b6ddc4a2f8caa
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 868, y: 2644}
+  - name: Armature_Idle_01
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 875
+      y: 891
+      width: 863
+      height: 883
+    spriteID: 2e6b174610081a9468ea6cd401b09b37
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 869, y: 880}
+  - name: Armature_Idle_00
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 863
+      height: 883
+    spriteID: d76fb55fe3c6d954ca81355ec4d4e456
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -3, y: -6}
+  - name: Camada 2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 895
+      width: 863
+      height: 883
+    spriteID: 8e8a4c585692f814db9fee8e6093df3c
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -3, y: 885}
+  platformSettings: []
+  mosaicLayers: 1
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  importedTextureWidth: 1024
+  importedTextureHeight: 2048
+  documentSize: {x: 896, y: 900}
+  paperDollMode: 0
+  keepDupilcateSpriteName: 0
+  spriteCategoryList:
+    categories: []
+  textureActualWidth: 4096
+  textureActualHeight: 8192
+  spritePackingTag: 
+  resliceFromLayer: 0
+  characterMode: 1
+  mosaicPSDLayers: []
+  rigPSDLayers:
+  - name: eye
+    spriteName: eye
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 5d903cbcf3ce4384dac49a5fcdcb5686
+    layerID: 19
+    mosaicPosition: {x: 875, y: 7884}
+  - name: Armature_Idle_15
+    spriteName: Armature_Idle_15
+    isGroup: 0
+    parentIndex: -1
+    spriteID: c42d9a5f857d9dc4280c80d345474fac
+    layerID: 18
+    mosaicPosition: {x: 875, y: 4}
+  - name: Armature_Idle_14
+    spriteName: Armature_Idle_14
+    isGroup: 0
+    parentIndex: -1
+    spriteID: d61140c37f54d884cb9ae576e427a332
+    layerID: 17
+    mosaicPosition: {x: 875, y: 1778}
+  - name: Armature_Idle_13
+    spriteName: Armature_Idle_13
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 8339de3b5dd171c42ad8e7d9f0f10439
+    layerID: 16
+    mosaicPosition: {x: 875, y: 3538}
+  - name: Armature_Idle_12
+    spriteName: Armature_Idle_12
+    isGroup: 0
+    parentIndex: -1
+    spriteID: f195ef078918e00438865e44d071a9a7
+    layerID: 15
+    mosaicPosition: {x: 875, y: 6156}
+  - name: Armature_Idle_11
+    spriteName: Armature_Idle_11
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 3ed1b4654d13da8419abff299d6f8858
+    layerID: 14
+    mosaicPosition: {x: 875, y: 7023}
+  - name: Armature_Idle_10
+    spriteName: Armature_Idle_10
+    isGroup: 0
+    parentIndex: -1
+    spriteID: d91cd4a16ecd2844da0c6eb747a1c90d
+    layerID: 13
+    mosaicPosition: {x: 1748, y: 4}
+  - name: Armature_Idle_09
+    spriteName: Armature_Idle_09
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 42cfe8918efb2ca4e9aa3c301353b864
+    layerID: 12
+    mosaicPosition: {x: 1748, y: 2563}
+  - name: Armature_Idle_08
+    spriteName: Armature_Idle_08
+    isGroup: 0
+    parentIndex: -1
+    spriteID: bf3b6d1ae13773844a0aab1a6c66743c
+    layerID: 11
+    mosaicPosition: {x: 1748, y: 3411}
+  - name: Armature_Idle_07
+    spriteName: Armature_Idle_07
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 2d326ba68814d804799634e8ddfe641f
+    layerID: 10
+    mosaicPosition: {x: 1748, y: 1714}
+  - name: Armature_Idle_06
+    spriteName: Armature_Idle_06
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 01b4a18d8ce656e439597d984d9212ae
+    layerID: 9
+    mosaicPosition: {x: 1748, y: 859}
+  - name: Armature_Idle_05
+    spriteName: Armature_Idle_05
+    isGroup: 0
+    parentIndex: -1
+    spriteID: f175cca88913d3a4e9f62c10d74c69e5
+    layerID: 8
+    mosaicPosition: {x: 4, y: 1786}
+  - name: Armature_Idle_04
+    spriteName: Armature_Idle_04
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 588a4a1218172fe4386ebb036d9397ac
+    layerID: 7
+    mosaicPosition: {x: 875, y: 5287}
+  - name: Armature_Idle_03
+    spriteName: Armature_Idle_03
+    isGroup: 0
+    parentIndex: -1
+    spriteID: af9f5ce7321047b499e7f2b69363173d
+    layerID: 6
+    mosaicPosition: {x: 875, y: 4412}
+  - name: Armature_Idle_02
+    spriteName: Armature_Idle_02
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 0f797cad7a9324244b6b6ddc4a2f8caa
+    layerID: 5
+    mosaicPosition: {x: 875, y: 2658}
+  - name: Armature_Idle_01
+    spriteName: Armature_Idle_01
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 2e6b174610081a9468ea6cd401b09b37
+    layerID: 4
+    mosaicPosition: {x: 875, y: 891}
+  - name: Armature_Idle_00
+    spriteName: Armature_Idle_00
+    isGroup: 0
+    parentIndex: -1
+    spriteID: d76fb55fe3c6d954ca81355ec4d4e456
+    layerID: 3
+    mosaicPosition: {x: 4, y: 4}
+  - name: Camada 2
+    spriteName: Camada 2
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 8e8a4c585692f814db9fee8e6093df3c
+    layerID: 2
+    mosaicPosition: {x: 4, y: 895}
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+  generateGOHierarchy: 0
+  textureAssetName: Globule_normal Texture
+  prefabAssetName: Globule_normal Prefab
+  spriteLibAssetName: Globule_normal Sprite Lib
+  secondarySpriteTextures: []

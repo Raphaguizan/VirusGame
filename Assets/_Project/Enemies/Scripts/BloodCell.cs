@@ -15,4 +15,8 @@ public class BloodCell : Enemy
     {
         base.FixedUpdate();
     }
+    protected override void DamageBehaviour()
+    {
+        anim.SetTrigger("damage");
+    }
 }
