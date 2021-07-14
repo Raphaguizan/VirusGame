@@ -140,6 +140,7 @@ MonoBehaviour:
   life: 1
   speed: 3
   waveHeigth: 0
+  body: {fileID: 6397625166192001448}
 --- !u!114 &-3864840958233807990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,7 +194,7 @@ MonoBehaviour:
   - {x: -0.70625937, y: -0.5431097, z: 0}
   m_ShapePathHash: 89943870
   m_Mesh: {fileID: 0}
-  m_InstanceId: 69730
+  m_InstanceId: 131482
 --- !u!114 &729179770512878152
 MonoBehaviour:
   m_ObjectHideFlags: 0

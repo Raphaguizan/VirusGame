@@ -202,7 +202,7 @@ public class Player : MonoBehaviour
     {
         
         Physics2D.IgnoreLayerCollision(7, 8);// desliga a colisão com inimigos
-        this.GetComponentInChildren<SpriteRenderer>().color = Color.black; // muda a cor(ou ativa animação)
+        ChangeColor(Color.black); // muda a cor(ou ativa animação)
         StartCoroutine(InvunerableTime(invunerableTime));// chama a corrotina que ativa tudo novamente
         LevelManager.RemoveAntiBody();// chama a função de remover anticorpo
     }
@@ -212,7 +212,16 @@ public class Player : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         Physics2D.IgnoreLayerCollision(7, 8, false);
-        this.GetComponentInChildren<SpriteRenderer>().color = Color.white;
+        ChangeColor(Color.white);
+    }
+
+    private void ChangeColor(Color c)
+    {
+        SpriteRenderer[] renderes = GetComponentsInChildren<SpriteRenderer>();
+        foreach(SpriteRenderer sR in renderes)
+        {
+            sR.color = c;
+        }
     }
     #endregion
     #region eyeTracking
@@ -246,7 +255,6 @@ public class Player : MonoBehaviour
             float dist = Vector2.Distance(hits[i].transform.position, transform.position);
             if (dist < minDistance)
             {
-                Debug.Log(hits[i]);
                 resp = hits[i].transform;
                 minDistance = dist;
             }

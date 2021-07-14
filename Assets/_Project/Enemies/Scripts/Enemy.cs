@@ -14,16 +14,21 @@ public class Enemy : MonoBehaviour
     protected virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        GetComponent<SpriteRenderer>().color = LevelManager.GetColorOfType(colorType);
+        ChangeColor(LevelManager.GetColorOfType(colorType));
         direction = Vector2.left;
         anim = GetComponentInChildren<Animator>();
     }
 
     public void Initialize(ColorType t, float speed = 3f)
     {
-        GetComponent<SpriteRenderer>().color = LevelManager.GetColorOfType(t);
+        ChangeColor(LevelManager.GetColorOfType(t));
         colorType = t;
         this.speed = speed;
+    }
+
+    protected virtual void ChangeColor(Color c)
+    {
+        // Virus color change
     }
     #endregion
 

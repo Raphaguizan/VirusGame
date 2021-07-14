@@ -1,0 +1,615 @@
+fileFormatVersion: 2
+guid: 10cc1ceb5cef01847b3a147736b4dd4d
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    isReadable: 0
+    streamingMipmaps: 1
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  spriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  mosaicSpriteImportData: []
+  rigSpriteImportData:
+  - name: pupils
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 597
+      y: 136
+      width: 125
+      height: 39
+    spriteID: 3027311de23e23f4da2b6517cc9b4de8
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -201, y: -431}
+  - name: eyes
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 397
+      y: 4
+      width: 192
+      height: 201
+    spriteID: 3d38e7dee1aed6b44973f58bcc1701a7
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -390, y: -498}
+  - name: mouth
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 397
+      y: 345
+      width: 111
+      height: 23
+    spriteID: e2975197a2b1a50488e8f98d92f23a72
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -417, y: -127}
+  - name: Coroa_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 910
+      y: 213
+      width: 72
+      height: 71
+    spriteID: b470fa600f866cc4ca58654578d0d14e
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -111, y: -161}
+  - name: Coroa_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 609
+      y: 292
+      width: 72
+      height: 72
+    spriteID: 28407dd76e2467d4a9577b054e09a8cc
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -281, y: -93}
+  - name: Coroa_3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 689
+      y: 292
+      width: 71
+      height: 72
+    spriteID: d15f7686148f0874cb5bc7945ce94f4b
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -406, y: -208}
+  - name: Coroa_4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 847
+      y: 292
+      width: 71
+      height: 71
+    spriteID: 04ace10793da7044e91a165ef19d4435
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -134, y: -197}
+  - name: Coroa_5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 768
+      y: 292
+      width: 71
+      height: 72
+    spriteID: e30c3a91fced10c4587594b4d52760b5
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -227, y: -336}
+  - name: Corpo
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 385
+      height: 385
+    spriteID: f3a4d48169dc76847b51d8f3a37a053a
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -805, y: -331}
+  - name: Coroa_6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 730
+      y: 4
+      width: 124
+      height: 124
+    spriteID: 96a1041608bbea74a9258e373a715cb8
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -373, y: -631}
+  - name: Coroa_7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 529
+      y: 213
+      width: 72
+      height: 142
+    spriteID: 7d06bbd477e48cf4abdc6c7ff594a7f1
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -433, y: -483}
+  - name: Coroa_8
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 862
+      y: 4
+      width: 124
+      height: 124
+    spriteID: bbf85696f28cace4e90c5b6e63d1315d
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -242, y: -297}
+  - name: Coroa_9
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 760
+      y: 213
+      width: 142
+      height: 71
+    spriteID: c2371a0c891c95d4cad844e54e0e56e2
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -405, y: -282}
+  - name: Coroa_10
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 397
+      y: 213
+      width: 124
+      height: 124
+    spriteID: ddc98409e4d62724eb7f849b657ab98a
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -372, y: -87}
+  - name: Coroa_11
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 397
+      width: 71
+      height: 142
+    spriteID: 5d4b69fbc00c1854e84c0dbef47603e8
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -959, y: 176}
+  - name: Coroa_12
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 597
+      y: 4
+      width: 125
+      height: 124
+    spriteID: 10a90a0d4094f5f4582b5841153f912f
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -171, y: -630}
+  - name: Coroa_13
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 609
+      y: 213
+      width: 143
+      height: 71
+    spriteID: 9744c571bbde745489ef66858565c2bf
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -80, y: -280}
+  platformSettings: []
+  mosaicLayers: 1
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  importedTextureWidth: 1024
+  importedTextureHeight: 1024
+  documentSize: {x: 1920, y: 1080}
+  paperDollMode: 0
+  keepDupilcateSpriteName: 0
+  spriteCategoryList:
+    categories: []
+  textureActualWidth: 1024
+  textureActualHeight: 1024
+  spritePackingTag: 
+  resliceFromLayer: 0
+  characterMode: 1
+  mosaicPSDLayers: []
+  rigPSDLayers:
+  - name: pupils
+    spriteName: pupils
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 3027311de23e23f4da2b6517cc9b4de8
+    layerID: 71
+    mosaicPosition: {x: 597, y: 136}
+  - name: eyes
+    spriteName: eyes
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 3d38e7dee1aed6b44973f58bcc1701a7
+    layerID: 74
+    mosaicPosition: {x: 397, y: 4}
+  - name: mouth
+    spriteName: mouth
+    isGroup: 0
+    parentIndex: -1
+    spriteID: e2975197a2b1a50488e8f98d92f23a72
+    layerID: 39
+    mosaicPosition: {x: 397, y: 345}
+  - name: Coroa_1
+    spriteName: Coroa_1
+    isGroup: 0
+    parentIndex: -1
+    spriteID: b470fa600f866cc4ca58654578d0d14e
+    layerID: 67
+    mosaicPosition: {x: 910, y: 213}
+  - name: Coroa_2
+    spriteName: Coroa_2
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 28407dd76e2467d4a9577b054e09a8cc
+    layerID: 66
+    mosaicPosition: {x: 609, y: 292}
+  - name: Coroa_3
+    spriteName: Coroa_3
+    isGroup: 0
+    parentIndex: -1
+    spriteID: d15f7686148f0874cb5bc7945ce94f4b
+    layerID: 64
+    mosaicPosition: {x: 689, y: 292}
+  - name: Coroa_4
+    spriteName: Coroa_4
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 04ace10793da7044e91a165ef19d4435
+    layerID: 65
+    mosaicPosition: {x: 847, y: 292}
+  - name: Coroa_5
+    spriteName: Coroa_5
+    isGroup: 0
+    parentIndex: -1
+    spriteID: e30c3a91fced10c4587594b4d52760b5
+    layerID: 63
+    mosaicPosition: {x: 768, y: 292}
+  - name: Corpo
+    spriteName: Corpo
+    isGroup: 0
+    parentIndex: -1
+    spriteID: f3a4d48169dc76847b51d8f3a37a053a
+    layerID: 51
+    mosaicPosition: {x: 4, y: 4}
+  - name: Coroa_6
+    spriteName: Coroa_6
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 96a1041608bbea74a9258e373a715cb8
+    layerID: 58
+    mosaicPosition: {x: 730, y: 4}
+  - name: Coroa_7
+    spriteName: Coroa_7
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 7d06bbd477e48cf4abdc6c7ff594a7f1
+    layerID: 57
+    mosaicPosition: {x: 529, y: 213}
+  - name: Coroa_8
+    spriteName: Coroa_8
+    isGroup: 0
+    parentIndex: -1
+    spriteID: bbf85696f28cace4e90c5b6e63d1315d
+    layerID: 60
+    mosaicPosition: {x: 862, y: 4}
+  - name: Coroa_9
+    spriteName: Coroa_9
+    isGroup: 0
+    parentIndex: -1
+    spriteID: c2371a0c891c95d4cad844e54e0e56e2
+    layerID: 59
+    mosaicPosition: {x: 760, y: 213}
+  - name: Coroa_10
+    spriteName: Coroa_10
+    isGroup: 0
+    parentIndex: -1
+    spriteID: ddc98409e4d62724eb7f849b657ab98a
+    layerID: 61
+    mosaicPosition: {x: 397, y: 213}
+  - name: Coroa_11
+    spriteName: Coroa_11
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 5d4b69fbc00c1854e84c0dbef47603e8
+    layerID: 55
+    mosaicPosition: {x: 4, y: 397}
+  - name: Coroa_12
+    spriteName: Coroa_12
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 10a90a0d4094f5f4582b5841153f912f
+    layerID: 56
+    mosaicPosition: {x: 597, y: 4}
+  - name: Coroa_13
+    spriteName: Coroa_13
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 9744c571bbde745489ef66858565c2bf
+    layerID: 62
+    mosaicPosition: {x: 609, y: 213}
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+  generateGOHierarchy: 0
+  textureAssetName: virus_normal Texture
+  prefabAssetName: virus_normal Prefab
+  spriteLibAssetName: virus_normal Sprite Lib
+  secondarySpriteTextures: []

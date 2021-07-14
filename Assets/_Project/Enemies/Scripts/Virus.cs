@@ -8,6 +8,7 @@ public class Virus : Enemy
     public float waveHeigth = 3f;
     private float time = 0;
 
+
     protected override void FixedUpdate()
     {
         time += Time.fixedDeltaTime;
@@ -15,5 +16,19 @@ public class Virus : Enemy
         direction = new Vector2(-speed, y);
 
         rb.MovePosition(rb.position + direction * Time.fixedDeltaTime);
+    }
+
+    protected override void ChangeColor(Color c)
+    {
+        SpriteRenderer[] parts = GetComponentsInChildren<SpriteRenderer>();
+        for (int i = 0; i < parts.Length; i++)
+        {
+            if (!parts[i].gameObject.name.Equals("eyes"))
+            {
+                Debug.Log(parts[i].gameObject.name +" color = "+c);
+                parts[i].color = c;
+                Debug.Log(parts[i].gameObject.name + " NOW = "+ parts[i].color);
+            }
+        }
     }
 }
