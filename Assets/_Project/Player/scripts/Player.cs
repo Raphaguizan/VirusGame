@@ -102,6 +102,14 @@ public class Player : MonoBehaviour
     }
     #endregion
 
+    #region Gun
+    [SerializeField]
+    private SpriteRenderer gunLiquid;
+
+    [SerializeField]
+    private Light2D gunLight;
+    #endregion
+
     #region escudo
     public Light2D backGroundLigth;
     private void OnEnable()
@@ -144,11 +152,16 @@ public class Player : MonoBehaviour
         {
             SpriteRenderer color = s.GetComponent<SpriteRenderer>();
             Light2D light = s.GetComponent<Light2D>();
+
             if (s.gameObject.activeInHierarchy)
             {
                 color.color = LevelManager.GetAntibodySelected().color;
                 light.color = LevelManager.GetAntibodySelected().color;
             }
+
+            // gun color adjust
+            gunLight.color = LevelManager.GetAntibodySelected().color;
+            gunLiquid.color = LevelManager.GetAntibodySelected().color;
         }
     }
     
@@ -224,6 +237,7 @@ public class Player : MonoBehaviour
         }
     }
     #endregion
+
     #region eyeTracking
     public EyeMove EyeMoveScript;
     public Transform defaultEyeTarget;

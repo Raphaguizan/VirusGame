@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering.Universal;
 using UnityEngine.InputSystem;
 
 public class ShotControler : MonoBehaviour
@@ -8,6 +9,7 @@ public class ShotControler : MonoBehaviour
     public static ShotControler Instance;
     private Animator playerAnim;
     private Guns gunType = null;
+
     private void OnEnable()
     {
         PowerUpController.PowerUpChange += PowerUpCtrl;
